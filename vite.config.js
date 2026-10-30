@@ -12,5 +12,12 @@ export default defineConfig({
   ],
   server: {
     port: 5175,
+    proxy: {
+      '/api': {
+        target: 'https://multivendorstore-backend-3.onrender.com',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
 })
